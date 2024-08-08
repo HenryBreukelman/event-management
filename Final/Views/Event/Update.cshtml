@@ -1,0 +1,34 @@
+﻿@model Final.Models.Event
+
+<h2>Update Event</h2>
+
+@using (Html.BeginForm()) {
+	<input type="hidden" asp-for="EventId" />
+	<div>
+		@Html.LabelFor(m => m.EventName)
+		@Html.TextBoxFor(m => m.EventName)
+		@Html.ValidationMessageFor(m => m.EventName, "", new { @class = "text-danger" })
+	</div>
+	<div>
+		@Html.LabelFor(m => m.EventDiscription)
+		@Html.TextBoxFor(m => m.EventDiscription)
+	</div>
+	<div>
+		@Html.LabelFor(m => m.EventDate)
+		@Html.TextBoxFor(m => m.EventDate)
+		@Html.ValidationMessageFor(m => m.EventDate, "", new { @class = "text-danger" })
+	</div>
+	<div>
+		@Html.LabelFor(m => m.EventLocation)
+		@Html.TextBoxFor(m => m.EventLocation)
+		@Html.ValidationMessageFor(m => m.EventLocation, "", new { @class = "text-danger" })
+
+	</div>
+	<div>
+		@Html.LabelFor(m => m.TicketPrice)
+		@Html.TextBoxFor(m => m.TicketPrice)
+		@Html.ValidationMessageFor(m => m.TicketPrice, "", new { @class = "text-danger" })
+
+	</div>
+	<button type="submit">Add</button>
+}

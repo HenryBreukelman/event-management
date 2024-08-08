@@ -1,0 +1,20 @@
+﻿@model AttendeeViewModel
+
+<h2>Add Attendee</h2>
+
+@using (Html.BeginForm()) {
+	<div>
+		@Html.LabelFor(m => m.AttendeeName)
+		@Html.TextBoxFor(m => m.AttendeeName)
+		@Html.ValidationMessageFor(m => m.AttendeeName, "", new { @class = "text-danger" })
+	</div>
+	<div>
+		@Html.LabelFor(m => m.AttendeeAge)
+		@Html.TextBoxFor(m => m.AttendeeAge)
+	</div>
+	<div>
+		@Html.LabelFor(m => m.AttendeeEmail)
+		@Html.TextBoxFor(m => m.AttendeeEmail)
+	</div>
+	<button type="submit">Add</button>
+}

@@ -1,0 +1,11 @@
+﻿@model Final.Models.Attendee
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete: @Model.AttendeeId</h3>
+
+@using (Html.BeginForm("ConfirmDelete", "Attendee", FormMethod.Post)) {
+	<input type="hidden" asp-for="AttendeeId" />
+	<button asp-action="Index">Back</button>
+	<button class="btn btn-danger" type="submit">Delete</button>
+}

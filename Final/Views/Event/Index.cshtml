@@ -1,0 +1,35 @@
+﻿@model List<Event>
+
+<h2>Events</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Event Name</th>
+			<th>Discription</th>
+			<th>Date</th>
+			<th>Location</th>
+			<th>Ticket Price</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var setEvent in Model) {
+			<tr>
+				<td>@setEvent.EventId</td>
+				<td>@setEvent.EventName</td>
+				<td>@setEvent.EventDiscription</td>
+				<td>@setEvent.EventDate</td>
+				<td>@setEvent.EventLocation</td>
+				<td>@setEvent.TicketPrice</td>
+				<td>
+					<a class="btn btn-primary" href="@Url.Action("Update", new { id = setEvent.EventId})">Edit</a>
+					<a class="btn btn-danger" href="@Url.Action("Delete", new { id = setEvent.EventId})">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a class="btn btn-success" href="@Url.Action("Create")">Create</a>

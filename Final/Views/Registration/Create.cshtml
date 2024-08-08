@@ -1,0 +1,16 @@
+﻿@model RegistrationViewModel
+
+<h2>Add Registration</h2>
+
+@using (Html.BeginForm()) {
+	<div>
+		@Html.LabelFor(m => m.EventId)
+		@Html.DropDownListFor(m => m.EventId, new SelectList(Model.Events, "EventId", "EventName"), "Event")
+	</div>
+	<div>
+		@Html.LabelFor(m => m.AttendeeId)
+		@Html.DropDownListFor(m => m.AttendeeId, new SelectList(Model.Attendees, "AttendeeId", "AttendeeName"), "Attendee")
+	</div>
+
+	<button type="submit">Add</button>
+}

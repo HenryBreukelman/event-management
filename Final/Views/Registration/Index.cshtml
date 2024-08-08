@@ -1,0 +1,30 @@
+﻿@model List<Registration>
+
+<h2>Registrations</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Registration ID</th>
+			<th>Event ID</th>
+			<th>Attendee ID</th>
+			<th>Registation Date</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var registration in Model) {
+			<tr>
+				<td>@registration.RegistrationId</td>
+				<td>@registration.EventId</td>
+				<td>@registration.AttendeeId</td>
+				<td>@registration.RegistrationDate</td>
+				<td>
+					<a class="btn btn-danger" href="@Url.Action("Delete", new { id = registration.RegistrationId})">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a class="btn btn-success" href="@Url.Action("Create")">Create</a>

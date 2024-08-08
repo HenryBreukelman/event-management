@@ -1,0 +1,31 @@
+﻿@model List<Attendee>
+
+<h2>Attendees</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Email</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var attendee in Model) {
+			<tr>
+				<td>@attendee.AttendeeId</td>
+				<td>@attendee.AttendeeName</td>
+				<td>@attendee.AttendeeAge</td>
+				<td>@attendee.AttendeeEmail</td>
+				<td>
+					<a class="btn btn-primary" href="@Url.Action("Update", new { id = attendee.AttendeeId})">Edit</a>
+					<a class="btn btn-danger" href="@Url.Action("Delete", new { id = attendee.AttendeeId})">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a class="btn btn-success" href="@Url.Action("Create")">Create</a>
